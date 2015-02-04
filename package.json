@@ -1,0 +1,23 @@
+{
+  "name": "timesheet",
+  "version": "0.1.0",
+  "description": "Simple timesheet management",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Paul Jackson <pjackson@gmail.com> (http://paulj.me/)",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.0"
+  },
+  "dependencies": {
+    "colors": "^1.0.3",
+    "commander": "^2.6.0",
+    "redis": "^0.12.1"
+  }
+}
