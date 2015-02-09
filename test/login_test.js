@@ -6,7 +6,7 @@ describe('login', function () {
   it('should return OK on successful login', function (done) {
     tasks.login('test', function (err, data) {
       assert.equal(err, null);
-      assert(/ok \[test\]/.test(data));
+      assert(/.*test\$.*ok/.test(data));
       done();
     });
   });
