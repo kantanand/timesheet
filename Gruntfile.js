@@ -9,6 +9,7 @@ module.exports = function(grunt) {
       'test/**/*.js'
     ],
     options: {
+      esnext: true,
       indent: 2,
       asi: false,
       laxbreak: true,
@@ -24,17 +25,13 @@ module.exports = function(grunt) {
       unused: true,
       eqnull: true,
       node: true,
-      browser: true,
+      browser: false,
       globals: {
-        // jQuery
-        "$": false
         // Mocha
-        // "describe"   : false,
-        // "it"         : false,
-        // "before"     : false,
-        // "beforeEach" : false,
-        // "after"      : false,
-        // "afterEach"  : false
+        "describe"   : false,
+        "it"         : false,
+        "before"     : false,
+        "after"      : false
       }
     }
   });

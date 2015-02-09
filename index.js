@@ -1,11 +1,36 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmony
+// -----------------------------------------------------------------
+//  index.js
+//
+//  timesheet
+//  Copyright 2015. Paul Jackson. All rights reserved.
+//
+//  Paul Jackson <pjackson@gmail.com>
+//
 
-var assert  = require('assert')
+
+// -----------------------------------------------------------------
+//  Dependencies
+
+const
+    assert  = require('assert')
   , program = require('commander')
   , pkg     = require('./package')
   , tasks   = require('./lib/tasks');
 
+
+// -----------------------------------------------------------------
+//  Program
+
 program.version(pkg.version);
+program
+  .command('login <username>')
+  .description('Login to the timesheet system')
+  .action(function (username) {
+    assert(username);
+    tasks.login(username);
+  });
+
 program
   .command('start <taskname> [time]')
   .description('Starts a new task with the name')
@@ -15,10 +40,10 @@ program
   });
 
 program
-  .command('stop')
+  .command('stop [time]')
   .description('Stops the current task')
-  .action(function () {
-    console.log(arguments);
+  .action(function (time) {
+    console.log(time);
   });
 
 program
@@ -82,3 +107,5 @@ program
   });
 
 program.parse(process.argv);
+
+if (program.args.length === 0) program.help();

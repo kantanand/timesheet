@@ -6,6 +6,12 @@ The problem with many of the timesheet management tools today is that they're to
 
 Here's a proposed command set for an initial version:
 
+#### Login
+
+    $ timesheet login <username>
+
+All data should be scoped to a single user, therefore, it is necessary for a user to be logged in. This also enables multiple users to use the system at the same time.
+
 #### Start a new task
 
     $ timesheet start <taskname> [time]
@@ -14,7 +20,7 @@ It should be easy to start a new task, simply type the name a new task will begi
 
 #### Stop a task
 
-    $ timesheet stop
+    $ timesheet stop [time]
 
 There should be no need to say what task to stop as you can only be doing one task at a time. Therefore, the current task is stopped.
 
