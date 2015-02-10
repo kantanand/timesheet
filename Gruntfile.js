@@ -31,7 +31,19 @@ module.exports = function(grunt) {
         "describe"   : false,
         "it"         : false,
         "before"     : false,
-        "after"      : false
+        "after"      : false,
+        "afterEach"  : false
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.config('watch', {
+    scripts: {
+      files: '<%= jshint.files %>',
+      tasks: ['jshint'],
+      options: {
+        events: ['change']
       }
     }
   });
