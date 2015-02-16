@@ -103,7 +103,7 @@ program
   .description('Display\'s all the tasks for today')
   .action(function () {
     _handled = true;
-    console.log(arguments);
+    reports.today();
   });
 
 program
