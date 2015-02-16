@@ -44,7 +44,7 @@ program
   .command('stop [time]')
   .description('Stops the current task')
   .action(function (time) {
-    console.log(time);
+    tasks.stop(time);
   });
 
 program
