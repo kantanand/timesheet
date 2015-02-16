@@ -95,7 +95,7 @@ program
   .description('Display\'s the last completed task')
   .action(function () {
     _handled = true;
-    console.log(arguments);
+    reports.last();
   });
 
 program
