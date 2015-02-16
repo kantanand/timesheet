@@ -109,4 +109,12 @@ program
 
 program.parse(process.argv);
 
-if (program.args.length === 0) program.help();
+if (program.args.length === 0) {
+  program.help();
+  process.exit(1);
+}
+if (typeof program.args[0] === 'string') {
+  console.log('\n  !! Unknown command !!');
+  program.help();
+  process.exit(1);
+}
