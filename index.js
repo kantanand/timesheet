@@ -51,7 +51,7 @@ program
   .command('cancel')
   .description('Cancels the current task')
   .action(function () {
-    console.log(arguments);
+    tasks.cancel();
   });
 
 program
