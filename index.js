@@ -16,7 +16,8 @@ const
     assert  = require('assert')
   , program = require('commander')
   , pkg     = require('./package')
-  , tasks   = require('./lib/tasks');
+  , tasks   = require('./lib/tasks')
+  , reports = require('./lib/reports');
 
 
 // -----------------------------------------------------------------
@@ -68,7 +69,7 @@ program
   .command('current')
   .description('Display\'s the current task information')
   .action(function () {
-    console.log(arguments);
+    reports.current();
   });
 
 program
