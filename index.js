@@ -109,12 +109,9 @@ program
 program
   .command('week')
   .description('Display\'s all the tasks for current week')
-  .option('-p, --prev [number]', 'Specify the number of weeks to go back', 1)
-  .action(function (options) {
+  .action(function () {
     _handled = true;
-    assert(options);
-
-    console.log(arguments);
+    reports.week();
   });
 
 program
