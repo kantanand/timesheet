@@ -71,18 +71,6 @@ program
   });
 
 program
-  .command('add <taskname> <start> <duration>')
-  .description('Add a new task with an arbitrary start date and duration')
-  .action(function (taskname, start, duration) {
-    _handled = true;
-    assert(taskname);
-    assert(start);
-    assert(duration);
-
-    console.log(arguments);
-  });
-
-program
   .command('current')
   .description('Display\'s the current task information')
   .action(function () {
@@ -117,11 +105,8 @@ program
 program
   .command('month')
   .description('Display\'s all the tasks for current month')
-  .option('-p, --prev [number]', 'Specify the number of months to go back', 1)
-  .option('-c, --csv', 'Output in CSV format')
-  .action(function (options) {
+  .action(function () {
     _handled = true;
-    assert(options);
 
     console.log(arguments);
   });

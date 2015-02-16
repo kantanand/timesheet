@@ -30,12 +30,6 @@ There should be no need to say what task to stop as you can only be doing one ta
 
 To cancel a running task, and remove any time tracked for it, simply call cancel. There should be no need to say what task to cancel as you can only be doing one task at a time. Therefore, the current task is cancelled.
 
-#### Add an Ad-hoc Task
-
-    $ timesheet add <taskname> <start-date-time> <duration>
-
-To insert an ad-hoc or arbitrary task, simple add the name of the task, the start date and time in the ISO date/time format (`YYYY-mm-dd HH:MM:SS`) and how long the task took in minutes.
-
 #### Reports
 
 At any time you can report on what task is active:
@@ -57,17 +51,3 @@ What tasks have been done this week:
 What tasks have been done this month:
 
     $ timesheet month
-
-With both the `week` and `month` reports you can optionally ask to report on the previous period (`--prev [number]`), you can specify a number to back that many periods. For example to go back to last month:
-
-    $ timesheet month --prev 1
-
-To go back to the month before last:
-
-    $ timesheet month --prev 2
-
-If you don't specify a number the report will use `1`. 
-
-##### Formatting
-
-The standard output for the report is a list, where each item is a task grouped into days. However, you can on the `month` and `week` reports use a `--csv` switch to output the report in CSV format.
