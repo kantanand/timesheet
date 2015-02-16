@@ -107,8 +107,7 @@ program
   .description('Display\'s all the tasks for current month')
   .action(function () {
     _handled = true;
-
-    console.log(arguments);
+    reports.month();
   });
 
 program.parse(process.argv);
