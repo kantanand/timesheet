@@ -104,10 +104,15 @@ program
 
 program
   .command('month')
+  .option('-p, --previous', 'Displays the previous months report')
   .description('Display\'s all the tasks for current month')
-  .action(function () {
+  .action(function (options) {
     _handled = true;
-    reports.month();
+    if (options.previous) {
+      reports.month_prev();
+    } else {
+      reports.month();
+    }
   });
 
 program.parse(process.argv);
